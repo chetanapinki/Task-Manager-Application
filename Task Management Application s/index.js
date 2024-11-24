@@ -8,7 +8,10 @@ const app = express();
 passport.use(
   new GoogleStrategy(
     {
-    //beause of git i remove this 
+      clientID: "229384796614-p9tos1g687ovg7uje6b1kdklm2gcevef.apps.googleusercontent.com",
+      clientSecret: "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",
+      callbackURL: "http://localhost:8080/auth/google/callback", // Fixed typo and added leading slash
+    
     },
     (accessToken, refreshToken, profile, done) => {
       console.log('Access Token:', accessToken);
